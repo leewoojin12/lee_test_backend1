@@ -6,7 +6,7 @@ import org.example.lee_test_backend.dto.Board;
 
 
 @Getter
-public class BoardReqDto {
+public class BoardRegisterReqDto {
 
 
     private String title;
