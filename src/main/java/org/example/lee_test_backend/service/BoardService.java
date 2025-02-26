@@ -42,5 +42,9 @@ public class BoardService {
         return BoardResDto.from(board);
 
     }
+
+    public Board getBoardIdx(Long boardIdx) {
+        return boardRepository.findById(boardIdx).orElseThrow();
+    }
 }
 

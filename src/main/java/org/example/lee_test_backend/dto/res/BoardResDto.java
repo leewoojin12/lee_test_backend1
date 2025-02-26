@@ -5,8 +5,10 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import org.example.lee_test_backend.dto.Board;
+import org.example.lee_test_backend.dto.Comment;
 import org.springframework.data.domain.Page;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -22,6 +24,8 @@ public class BoardResDto {
     private String title;
     private String content;
     private String writer;
+    private int commentCount;
+    private List<CommentResDto> commentList = new ArrayList<>();
 
 
     public static BoardResDto from(Board board) {
@@ -30,8 +34,9 @@ public class BoardResDto {
                 .title(board.getTitle())
                 .content(board.getContent())
                 .writer(board.getWriter())
+                .commentCount(board.getCommentCount())
+                .commentList(board.getCommentList().stream().map(CommentResDto::from).collect(Collectors.toList()))
                 .build();
-
 
 
     }
