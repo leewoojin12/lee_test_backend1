@@ -1,7 +1,11 @@
 package org.example.lee_test_backend.dto.req;
 
+import lombok.Getter;
 import org.example.lee_test_backend.dto.Board;
 
+
+
+@Getter
 public class BoardReqDto {
 
 
